@@ -1,0 +1,15 @@
+// @file
+// The ir7 Minor stylesheet for this theme.
+//
+
+#mediaplayer {
+  max-width: 100%;
+}
+
+@import 'blocks/blocks';
+@import 'regions/regions';
+@import 'page_elements/breadcrumb/breadcrumb';
+@import 'page_elements/header/header';
+@import 'page_elements/front_slider/front_slider';
+@import 'collection_view/collection_view';
+@import '../layouts/layout-front/layout-front';

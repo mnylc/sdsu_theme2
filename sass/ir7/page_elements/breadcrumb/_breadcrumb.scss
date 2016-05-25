@@ -1,0 +1,23 @@
+
+.breadcrumb,
+%breadcrumb {
+  margin: 7px;
+  font-size: 85%;
+
+  li:hover {
+    color: #f7f9f6;
+  }
+
+  li {
+
+    a {
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #888;
+    }
+
+  }
+
+}

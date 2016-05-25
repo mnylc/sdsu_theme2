@@ -1,0 +1,29 @@
+// Menu Header Menu
+
+.submit-collection,
+.submit-collection-anon {
+  display: table;
+  width: 100%;
+  font-size: 130%;
+  font-weight: normal;
+  height: 70px;
+  line-height: 2.9em;
+  margin-bottom: 0;
+  min-height: 100px;
+
+  .block-inner-wrapper {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  p {
+    margin: 0 auto;
+    text-align: center;
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
+  }
+
+}

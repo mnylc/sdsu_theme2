@@ -1,0 +1,135 @@
+
+
+@mixin front-layout-1-column-small() {
+  .front-slider {
+    @include zen-grid-item(1, 1);
+    max-height: 490px;
+  }
+
+  .welcome {
+    @include zen-new-row(left);
+    @include zen-grid-item(1, 1);
+    box-sizing: border-box;
+    padding: 5px;
+    text-align: center;
+  }
+
+  .front-search {
+    @include zen-new-row(left);
+    @include zen-grid-item(1, 1);
+    box-sizing: border-box;
+    padding: 5px;
+  }
+
+  .submit-collection,
+  .submit-collection-anon {
+    @include zen-new-row();
+    @include zen-grid-item(1, 1);
+    box-sizing: border-box;
+    padding: 5px;
+  }
+
+  .front-bottom {
+    @include zen-new-row();
+    @include zen-grid-item(1, 1);
+    box-sizing: border-box;
+    padding: 5px;
+
+    .views-row {
+      max-width: 100%;
+    }
+  }
+}
+
+@mixin front-layout-2-column-medium() {
+  .front-slider {
+    @include zen-grid-item(2, 1);
+    max-height: 480px;
+  }
+
+  .welcome {
+    @include zen-new-row(left);
+    @include zen-grid-item(2, 1);
+    box-sizing: border-box;
+    padding: 5px;
+  }
+
+  .front-search {
+    @include zen-new-row(left);
+    @include zen-grid-item(1, 2);
+    box-sizing: border-box;
+    padding: 5px;
+
+    .block-inner-wrapper {
+      min-height: 90px;
+    }
+  }
+
+  .submit-collection,
+  .submit-collection-anon {
+    @include zen-grid-item(1, 1);
+    box-sizing: border-box;
+    padding: 5px;
+    clear: none;
+  }
+
+  .front-bottom {
+    @include zen-new-row();
+    @include zen-grid-item(2, 1);
+    box-sizing: border-box;
+    padding: 5px;
+
+    .views-row {
+      max-width: 47%;
+    }
+  }
+}
+
+
+@mixin front-layout-3-column-large() {
+  .front-slider {
+    @include zen-grid-item(2, 1);
+    box-sizing: border-box;
+    padding: 5px;
+    max-height: 440px;
+  }
+
+  .welcome {
+    @include zen-new-row(right);
+    @include zen-grid-item(1, 1, right);
+    box-sizing: border-box;
+    padding: 5px;
+    text-align: center;
+
+    .block-inner-wrapper {
+      max-height: 19.5em;
+      min-height: 19.5em;
+    }
+  }
+
+  .front-search {
+    @include zen-new-row(right);
+    @include zen-grid-item(1, 1, right);
+    box-sizing: border-box;
+    padding: 5px;
+  }
+
+  .submit-collection,
+  .submit-collection-anon {
+    @include zen-new-row(right);
+    @include zen-grid-item(1, 1, right);
+    box-sizing: border-box;
+    padding: 5px;
+  }
+
+  .front-bottom {
+    @include zen-new-row(both);
+    @include zen-grid-item(3, 1);
+    box-sizing: border-box;
+    padding: 5px;
+
+    .views-row {
+      max-width: 47%;
+    }
+  }
+}
