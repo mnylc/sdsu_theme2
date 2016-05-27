@@ -43,7 +43,7 @@
       // Override the callback functions specified in the
       // 'callbacks' variable.
       for (var carousel in settings.owlcarousel) {
-        if (carousel === 'owl-carousel-block1') {
+        if (carousel !== null) {
           // Extend the functionality of the callbacks per json obj.
           $.extend(true, settings.owlcarousel[carousel].settings, callbacks);
         }
