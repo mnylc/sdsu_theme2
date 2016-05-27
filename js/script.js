@@ -18,7 +18,6 @@
        * Our own 'afterInit' function in the Carousel.
        */
       function afterOWLinit() {
-    	 console.log("after owl init");
         update_slide_animation(this);
       }
 
@@ -26,7 +25,6 @@
        * Our own 'afterMove' function in the Carousel.
        */
       function afterOWLMove() {
-    	  console.log("after owl move");
         update_slide_animation(this);
       }
 
@@ -45,9 +43,7 @@
       // Override the callback functions specified in the
       // 'callbacks' variable.
       for (var carousel in settings.owlcarousel) {
-        console.log(carousel);
         if (carousel === 'owl-carousel-block1') {
-          console.log(carousel);
           // Extend the functionality of the callbacks per json obj.
           $.extend(true, settings.owlcarousel[carousel].settings, callbacks);
         }
