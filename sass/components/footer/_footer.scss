@@ -1,0 +1,65 @@
+// Footer
+//
+// This represents the default footer styling.
+//
+// This component can be extended by using:
+//   `@extend %footer;`
+//
+// Markup: footer.twig
+//
+// Style guide: components.footer
+
+
+.footer,
+#footer,
+%footer {
+  @include clearfix();
+  margin-top: 1.8em;
+  display: block;
+
+  .footer-logo {
+    float: left;
+  }
+
+  #block-menu-menu-footer-menu {
+    @include clearfix();
+    float: left;
+    font-size: 75%;
+
+    ul {
+      list-style: none;
+      margin: 1em 0;
+
+      li {
+       display: inline-block;
+       margin-right: 1em;
+
+        a,
+        a:visited {
+          color: #424143;
+          text-decoration: none;
+        }
+
+        a:hover {
+          color: #419845;
+        }
+
+      }
+    }
+  }
+
+  #block-widgets-s-socialmedia-share-default {
+    @include clearfix();
+    float: right;
+
+    .widgets-element {
+      display: inline-block;
+
+      img {
+        width: 85%;
+      }
+    }
+
+  }
+
+}

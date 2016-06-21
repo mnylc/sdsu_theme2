@@ -1,0 +1,54 @@
+// Box
+//
+// A simple block highlighted style.
+//
+// A Drupal block is often styled as a box. However, this design component is
+// not applied to any blocks by default; it is used as an example of how to
+// build and document a CSS component.
+//
+// "box" is the name of our component, so we define a `.box` class that we can
+// apply to any HTML element that needs the box styling. We also provide a
+// `%box` placeholder selector so that we can easily extend the basic box
+// component with `@extend %box;`.
+//
+// Take a look at the source code for this component for more information about
+// building a good component.
+//
+// :hover - The hover/focus styling.
+// .box--highlight - The "highlight" box variant.
+//
+// Markup: box.twig
+//
+// Style guide: components.highlighted-block
+
+.highlighted-block,
+%highlighted-block {
+  &--normal {
+    .block-inner-wrapper {
+      @extend %inner-wrapper;
+      background-color: color(white);
+    }
+  }
+
+  &--green {
+    .block-inner-wrapper {
+      @extend %inner-wrapper;
+      background-color: color(dgi-green);
+      display: table-cell;
+      vertical-align: middle;
+      color: color(white);
+    }
+  }
+
+  &--menu {
+    background: -webkit-linear-gradient(color(menu-gradient-start), color(menu-gradient-end)); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(color(menu-gradient-start), color(menu-gradient-end)); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(color(menu-gradient-start), color(menu-gradient-end)); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(color(menu-gradient-start), color(menu-gradient-end));
+  }
+}
+
+%inner-wrapper {
+  padding: 10px;
+  box-shadow: 0 0 5px 1px rgba(38, 37, 38, .3);
+}

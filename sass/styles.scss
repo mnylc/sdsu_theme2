@@ -38,6 +38,9 @@
 @import 'layouts/layout-center/layout-center';
 @import 'layouts/layout-swap/layout-swap';
 
+// Custom front page layout
+@import 'layouts/layout-front/layout-front';
+
 // Forms
 //
 // Form components are specialized design components that are applied to forms
@@ -91,5 +94,22 @@
 @import 'components/visually-hidden/visually-hidden';
 @import 'components/watermark/watermark';
 @import 'components/wireframe/wireframe';
+@import 'components/footer/footer';
+@import 'components/highlight-block/highlight-block';
 
-@import 'ir7/ir7';
+@import 'components/islandora-simple-search/islandora-simple-search';
+@import 'components/featured-collections/featured-collections';
+@import 'components/islandora-basic-collection/islandora-basic-collection';
+@import 'components/menu-header-menu/menu-header-menu';
+@import 'components/submit-to-collection/submit-to-collection';
+@import 'components/slideshow/slideshow';
+@import 'components/mediaplayer/mediaplayer';
+
+// Include the colors defined for your project.
+
+@import 'chroma/kss';
+
+// Include the colors defined for your project:::::::::Kick off kss-markup.
+/*
+#{chroma-kss-markup()}
+*/

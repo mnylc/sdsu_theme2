@@ -13,8 +13,6 @@ Design components are reusable designs that can be applied using just the CSS cl
 <dd>`sass/layouts` — Layout components position major chunks of the page. They just apply positioning, no other styles.</dd>
 <dt>**Components**</dt>
 <dd>`sass/components` — Miscellaneous components are grouped together, but feel free to further categorize these.</dd>
-<dt>**Navigation**</dt>
-<dd>`sass/navigation` — Navigation components are specialized design components that are applied to website navigation.</dd>
 <dt>**Forms**</dt>
 <dd>`sass/forms` — Form components are specialized design components that are applied to forms or form elements.</dd>
 </dl>

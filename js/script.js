@@ -5,10 +5,12 @@
 
 (function ($, Drupal, window, document) {
   'use strict';
-  Drupal.behaviors.my_custom_behavior = {
+  Drupal.behaviors.owl_slide = {
     attach: function (context, settings) {
 
-      // Create instances of the Carousel callbacks to override.
+      /**
+       * Create instances of the Carousel callbacks to override.
+       */
       var callbacks = {
         afterInit: afterOWLinit,
         afterMove: afterOWLMove
@@ -28,6 +30,10 @@
         update_slide_animation(this);
       }
 
+      /**
+       * Manually handle adding and removing of classes,
+       * as part of the slide reveal.
+       */
       function update_slide_animation(context) {
         $('.info-content-wrapper').each(function () {
           $(this).removeClass('owl-info-show');
@@ -40,8 +46,9 @@
         }, 800, [context.currentItem, context]);
       }
 
-      // Override the callback functions specified in the
-      // 'callbacks' variable.
+      /**
+       * Override the callback functions specified in the 'callbacks' variable.
+       */
       for (var carousel in settings.owlcarousel) {
         if (carousel !== null) {
           // Extend the functionality of the callbacks per json obj.

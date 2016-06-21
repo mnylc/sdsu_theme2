@@ -1,12 +1,24 @@
+// Layout Front
+//
+// This layout is specifically for use
+// with the home page.
+//
+// Markup: layout-front.twig
+//
+// Weight: -3
+//
+// Style guide: layouts.layout-front
 
+.layout-3col {
+  @include zen-grid-container($context: flow);
 
-@mixin front-layout-1-column-small() {
-  .front-slider {
+  .front-slider,
+  .layout-front-side-main__layout {
     @include zen-grid-item(1, 1);
-    max-height: 490px;
   }
 
-  .welcome {
+  .welcome,
+  .layout-front-side-first__layout {
     @include zen-new-row(left);
     @include zen-grid-item(1, 1);
     box-sizing: border-box;
@@ -14,7 +26,8 @@
     text-align: center;
   }
 
-  .front-search {
+  .front-search,
+  .layout-front-side-second__layout {
     @include zen-new-row(left);
     @include zen-grid-item(1, 1);
     box-sizing: border-box;
@@ -22,114 +35,112 @@
   }
 
   .submit-collection,
-  .submit-collection-anon {
+  .submit-collection-anon,
+  .layout-front-side-third__layout {
     @include zen-new-row();
     @include zen-grid-item(1, 1);
     box-sizing: border-box;
     padding: 5px;
   }
 
-  .front-bottom {
+  .front-bottom,
+  .layout-front-bottom__layout {
     @include zen-new-row();
     @include zen-grid-item(1, 1);
     box-sizing: border-box;
     padding: 5px;
+  }
 
-    .views-row {
-      max-width: 100%;
+  @include zen-respond-to(m) {
+    .front-slider,
+    .layout-front-side-main__layout {
+      @include zen-grid-item(2, 1);
     }
-  }
-}
 
-@mixin front-layout-2-column-medium() {
-  .front-slider {
-    @include zen-grid-item(2, 1);
-    max-height: 480px;
-  }
-
-  .welcome {
-    @include zen-new-row(left);
-    @include zen-grid-item(2, 1);
-    box-sizing: border-box;
-    padding: 5px;
-  }
-
-  .front-search {
-    @include zen-new-row(left);
-    @include zen-grid-item(1, 2);
-    box-sizing: border-box;
-    padding: 5px;
-
-    .block-inner-wrapper {
-      min-height: 90px;
+    .welcome,
+    .layout-front-side-first__layout {
+      @include zen-new-row(left);
+      @include zen-grid-item(2, 1);
+      box-sizing: border-box;
+      padding: 5px;
     }
-  }
 
-  .submit-collection,
-  .submit-collection-anon {
-    @include zen-grid-item(1, 1);
-    box-sizing: border-box;
-    padding: 5px;
-    clear: none;
-  }
+    .front-search,
+    .layout-front-side-second__layout {
+      @include zen-new-row(left);
+      @include zen-grid-item(1, 2);
+      box-sizing: border-box;
+      padding: 5px;
 
-  .front-bottom {
-    @include zen-new-row();
-    @include zen-grid-item(2, 1);
-    box-sizing: border-box;
-    padding: 5px;
-
-    .views-row {
-      max-width: 47%;
+      .block-inner-wrapper {
+        min-height: 90px;
+      }
     }
-  }
-}
 
+    .submit-collection,
+    .submit-collection-anon,
+    .layout-front-side-third__layout {
+      @include zen-grid-item(1, 1);
+      box-sizing: border-box;
+      padding: 5px;
+      clear: none;
+    }
 
-@mixin front-layout-3-column-large() {
-  .front-slider {
-    @include zen-grid-item(2, 1);
-    box-sizing: border-box;
-    padding: 5px;
-    max-height: 440px;
-  }
-
-  .welcome {
-    @include zen-new-row(right);
-    @include zen-grid-item(1, 1, right);
-    box-sizing: border-box;
-    padding: 5px;
-    text-align: center;
-
-    .block-inner-wrapper {
-      max-height: 19.5em;
-      min-height: 19.5em;
+    .front-bottom,
+    .layout-front-bottom__layout {
+      @include zen-new-row();
+      @include zen-grid-item(2, 1);
+      box-sizing: border-box;
+      padding: 5px;
     }
   }
 
-  .front-search {
-    @include zen-new-row(right);
-    @include zen-grid-item(1, 1, right);
-    box-sizing: border-box;
-    padding: 5px;
-  }
 
-  .submit-collection,
-  .submit-collection-anon {
-    @include zen-new-row(right);
-    @include zen-grid-item(1, 1, right);
-    box-sizing: border-box;
-    padding: 5px;
-  }
+  @include zen-respond-to(xl) {
+    .front-slider,
+    .layout-front-side-main__layout {
+      @include zen-grid-item(2, 1);
+      box-sizing: border-box;
+      padding: 5px;
+    }
 
-  .front-bottom {
-    @include zen-new-row(both);
-    @include zen-grid-item(3, 1);
-    box-sizing: border-box;
-    padding: 5px;
+    .welcome,
+    .layout-front-side-first__layout {
+      @include zen-new-row(right);
+      @include zen-grid-item(1, 1, right);
+      box-sizing: border-box;
+      padding: 5px;
+      text-align: center;
 
-    .views-row {
-      max-width: 47%;
+      .block-inner-wrapper {
+        max-height: 19.5em;
+        min-height: 19.5em;
+      }
+    }
+
+    .front-search,
+    .layout-front-side-second__layout {
+      @include zen-new-row(right);
+      @include zen-grid-item(1, 1, right);
+      box-sizing: border-box;
+      padding: 5px;
+    }
+
+    .submit-collection,
+    .submit-collection-anon,
+    .layout-front-side-third__layout {
+      @include zen-new-row(right);
+      @include zen-grid-item(1, 1, right);
+      box-sizing: border-box;
+      padding: 5px;
+    }
+
+    .front-bottom,
+    .layout-front-bottom__layout {
+      @include zen-new-row(both);
+      @include zen-grid-item(3, 1);
+      box-sizing: border-box;
+      padding: 5px;
     }
   }
 }

@@ -1,0 +1,46 @@
+// Header Menu
+//
+// The menu block that appears on every page.
+//
+// Markup: menu-header-menu.twig
+//
+// Style guide: components.header-menu
+
+#block-menu-menu-header-menu,
+%block-menu-menu-header-menu {
+  @include clearfix();
+  float: right;
+  font-size: 85%;
+  line-height: 2.5em;
+  display: block;
+
+  ul.menu {
+    @include clearfix();
+    margin: 0 .8em;
+    padding-left: 15px;
+
+    li {
+      display: inline-block;
+      margin: 0 .8em;
+
+      a {
+        color: white;
+
+        &:hover {
+          color: #419845;
+        }
+
+        &:link {
+          text-decoration: none;
+        }
+      }
+
+    }
+
+    li.first {
+      margin-left: 0;
+    }
+
+  }
+
+}

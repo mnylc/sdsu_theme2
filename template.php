@@ -16,4 +16,13 @@ function ir7_saas_form_islandora_solr_simple_search_form_alter(&$form, &$form_st
   );
   $form['simple']['advanced_link'] = $link;
   $form['simple']['islandora_simple_search_query']['#attributes']['placeholder'] = t("Search Repository");
+
+}
+
+function ir7_saas_css_alter(&$css) {
+  $exclude = array(
+    'sites/all/modules/islandora_solution_pack_collection/css/islandora_basic_collection.base.css' => FALSE,
+    'sites/all/modules/islandora_solution_pack_collection/css/islandora_basic_collection.theme.css ' => FALSE,
+  );
+  $css = array_diff_key($css, $exclude);
 }

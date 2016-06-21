@@ -1,0 +1,138 @@
+// Frontpage Slideshow
+//
+// The front page featured collections.
+// This utilizes zen-respond-to(m) to respond to a medium
+// width as defined in the themes _variables.scss file
+// (as 'm') to control the stacking of child elements on smaller
+// screen sizes. This is a layout integrated into 
+// islandora_solr_views, utilizing default class
+// selectors such as .views-row. Further customizations
+// are available on this views configuration page.
+//
+// Markup: slideshow.twig
+//
+// Style guide: components.slideshow
+
+.front__slider,
+.front-slider,
+%front-slider,
+%front__slider {
+  padding-top: 10px;
+
+  .owl-item {
+
+    div {
+      transition: opacity .3s ease, height .3s ease;
+    }
+
+    > div {
+      position: relative;
+
+      .info-content-wrapper {
+        background-color: rgba(0, 0, 0, .4);
+        bottom: 0;
+        box-sizing: border-box;
+        padding: 5px;
+        position: absolute;
+        width: 100%;
+        .title-field {
+          transition: opacity .3s ease .31s;
+          display: block;
+          opacity: 0;
+
+          a {
+            color: #5a5b5d;
+            font-family: 'Ropa Sans', sans-serif;
+            font-weight: normal;
+            color: white;
+            text-shadow: 0 -1px 0 rgba(0, 0, 0, .3);
+          }
+        }
+
+        .desc-field {
+          color: white;
+          text-shadow: 0 -1px 0 rgba(0, 0, 0, .3);
+          display: block;
+          opacity: 0;
+          top: 0;
+          transition: opacity .3s ease .31s;
+        }
+      }
+    }
+  }
+
+  .owl-info-hidden {
+    opacity: 0;
+    height: 0%;
+  }
+
+  .owl-info-show {
+    opacity: 1;
+    height: 30%;
+
+    .title-field {
+      opacity: 1;
+    }
+
+    .desc-field {
+      top: 100%;
+      opacity: 1;
+    }
+  }
+
+  .owl-controls.clickable {
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+    pointer-events: none;
+    top: 0;
+
+    .owl-pagination {
+      bottom: 0;
+      position: absolute;
+      width: 100%;
+
+      .owl-page {
+        pointer-events: all;
+      }
+    }
+
+    .owl-buttons {
+      position: relative;
+      top: 40%;
+
+      .owl-prev {
+        left: 5px;
+        position: absolute;
+        pointer-events: all;
+      }
+
+      .owl-next {
+        right: 5px;
+        position: absolute;
+        pointer-events: all;
+      }
+    }
+  }
+}
+
+.owl-item-animate {
+  .info-content-wrapper {
+    opacity: 1;
+    height: 30%;
+
+    .title-field {
+      opacity: 1;
+    }
+
+    .desc-field {
+      top: 100%;
+      opacity: 1;
+    }
+  }
+}
+
+.front-page-slideshow-image {
+  width: 100%;
+  height: 440px;
+}

@@ -11,10 +11,11 @@
 .header,
 %header {
   @extend %clearfix;
+  text-align: center;
 
   // Wrapping link for logo.
   &__logo {
-    float: left;
+    float: none;
     margin: 0 10px 0 0;
     padding: 0;
 
@@ -31,7 +32,8 @@
 
   // Wrapper for website name and slogan.
   &__name-and-slogan {
-    float: left;
+    float: none;
+    padding-bottom: 5px;
   }
 
   // The name of the website.
@@ -90,5 +92,36 @@
   &__region {
     // Clear the logo.
     clear: both;
+    padding-bottom: 5px;
+    display: table;
+    width: 100%;
+
+    .block-menu {
+      width: 100%;
+    }
+  }
+}
+
+@include zen-respond-to(m) {
+   header,
+   .header {
+     text-align: left;
+
+     &__region {
+       padding-bottom: 5px;
+
+       .block-menu {
+         width: auto;
+       }
+     }
+
+    &__logo {
+      float: left;
+    }
+
+    &__name-and-slogan {
+      float: left;
+      padding-bottom: 5px;
+    }
   }
 }

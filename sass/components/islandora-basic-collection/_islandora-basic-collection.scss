@@ -1,0 +1,92 @@
+// Islandora Basic Collections (Grid Item/list Item)
+//
+// This styles basic layout and hover effects on object thumbs
+// and grid. All styling is provided by the theme.
+// The islandora solution pack collection provides its
+// own css, in the 'css/islandora_basic_collection.base.css'
+// file and 'css/islandora_basic_collection.theme.css' file.
+// This theme will override these files using the
+// 'hook_css_alter()' in the theme template.php. All of these styles
+// have been embeded here, using a %islandora-basic-collection
+// placeholder (.scss), to allow one to easily extend its styling.
+//
+// Markup: islandora-basic-collection.twig
+//
+// Style guide: components.islandora-basic-collections
+
+.islandora-basic-collection,
+%islandora-basic-collection {
+  overflow: hidden;
+  width: 100%;
+  margin: 1.5em auto;
+
+  &-list-item {
+    padding-bottom: 1.5em;
+    border-bottom: 1px solid #ddd;
+    clear: both;
+    width: 100%;
+
+    dl {
+      dt {
+        clear: left;
+        float: left;
+        padding: 3px 0 0;
+        text-align: center;
+        width: 100px;
+      }
+
+      dd {
+        margin: 0 0 0 130px;
+      }
+    }
+  }
+
+  &-object {
+    transition: all .2s ease;
+
+    dt {
+      img {
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+      }
+    }
+
+    dd {
+      padding-top: 2px;
+      padding-bottom: 2px;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &-display-switch {
+    ul {
+      margin-top: 0;
+      margin-bottom: 0;
+      float: right;
+    }
+  }
+
+  &-grid {
+    text-align: center;
+
+    dl {
+      width: 20%;
+      min-width: 100px;
+      min-height: 180px;
+      display: -moz-inline-stack;
+      display: inline-block;
+      vertical-align: top;
+      margin: 1.5em 1.84%;
+      zoom: 1;
+    }
+
+    dd {
+      margin: 0;
+      padding: 0;
+    }
+  }
+}

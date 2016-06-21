@@ -1,6 +1,6 @@
 {
   "name": "zen-subtheme",
-  "author": "You!",
+  "author": "Morgan Dawe",
   "description": "The node.js requirements to build this project.",
   "version": "1.0.0",
   "repository": {},
@@ -26,7 +26,6 @@
     "sass-lint": "^1.7.0",
     "support-for": "^1.0.6",
     "typey": "^1.0.0",
-    "node-compass": "0.2.4",
     "zen-grids": "^2.0.2"
   },
   "engines": {

@@ -69,13 +69,17 @@ options.styleGuide = {
   css: [
     path.relative(options.rootPath.styleGuide, options.theme.css + 'styles.css'),
     path.relative(options.rootPath.styleGuide, options.theme.css + 'style-guide/chroma-kss-styles.css'),
-    path.relative(options.rootPath.styleGuide, options.theme.css + 'style-guide/kss-only.css')
+    path.relative(options.rootPath.styleGuide, options.theme.css + 'style-guide/kss-only.css'),
+    path.relative(options.rootPath.styleGuide, '../../libraries/owl-carousel/owl.carousel.css'),
+    path.relative(options.rootPath.styleGuide, '../../libraries/owl-carousel/owl.theme.css')
   ],
   js: [
+    path.relative(options.rootPath.styleGuide, 'styleguide/resources/jquery-3.0.0.min.js'),
+    path.relative(options.rootPath.styleGuide, '../../libraries/owl-carousel/owl.carousel.js'),
+    path.relative(options.rootPath.styleGuide, 'styleguide/resources/styleguide_behaviour.js')
   ],
-
   homepage: 'homepage.md',
-  title: 'Zen 7.x-6.x Style Guide'
+  title: 'IR7 SAAS Style Guide'
 };
 
 // Define the paths to the JS files to lint.

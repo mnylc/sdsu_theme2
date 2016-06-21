@@ -1,0 +1,72 @@
+// Featured Collections
+//
+// The front page featured collections.
+// This utilizes zen-respond-to(m) to respond to a medium
+// width as defined in the themes _variables.scss file
+// (as 'm') to control the stacking of child elements on smaller
+// screen sizes. This is a layout integrated into 
+// islandora_solr_views, utilizing default class
+// selectors such as .views-row. Further customizations
+// are available on this views configuration page.
+//
+// This component can be extended by using:
+//   `@extend %featured-collections;`
+//
+// Markup: featured-collections.twig
+//
+// Style guide: components.featured-collections
+
+.featured-collections,
+%featured-collections {
+  @include clearfix();
+  background-attachment: scroll;
+  background-clip: border-box;
+  background-image: none;
+  background-origin: padding-box;
+  background-position: 0 0;
+  background-repeat: repeat;
+  background-size: auto auto;
+  float: left;
+  padding: 15px;
+  margin-bottom: 10px;
+
+  .block-inner-wrapper {
+    @include clearfix();
+    float: left;
+  }
+
+  h2.block__title {
+    border-bottom: 1px solid color(grey-light);
+  }
+
+  .views-row {
+    @include clearfix();
+    float: left;
+    max-width: 100%;
+    padding-bottom: 1em;
+    padding-left: 0;
+    padding-right: 1em;
+    padding-top: 1em;
+    word-wrap: break-word;
+
+    a {
+      color: color(dgi_anchor);
+      font-size: 100%;
+      font-weight: bold;
+      text-decoration: none;
+
+      img {
+        float: left;
+        height: 115px;
+        padding-right: 10px;
+        width: 115px;
+      }
+    }
+  }
+
+  @include zen-respond-to(m) {
+    .views-row {
+      max-width: 47%;
+    }
+  }
+}

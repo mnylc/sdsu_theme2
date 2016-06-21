@@ -47,8 +47,6 @@
 //
 // Style guide: layouts.layout-3col
 
-@import '../layout-front/layout-front';
-
 .layout-3col,
 %layout-3col {
   // We set the context to flow, so that this container can be used in most
@@ -72,8 +70,6 @@
     @include zen-grid-item-base();
     @include zen-grid-item(1, 1);
   }
-
-  @include front-layout-1-column-small();
 
   @include zen-respond-to(m) {
     // Since our container's context is "flow" and we changed the gutter size,
@@ -110,7 +106,6 @@
       @include zen-apply-gutter-padding();
     }
 
-    @include front-layout-2-column-medium();
   }
 
   @include zen-respond-to(xl) {
@@ -160,7 +155,6 @@
       display: none;
     }
 
-    @include front-layout-3-column-large();
   }
 
   // Place last so it can override the padding of grid items.
