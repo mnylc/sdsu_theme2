@@ -16,7 +16,7 @@ function ir7_saas_form_islandora_solr_simple_search_form_alter(&$form, &$form_st
   );
   $form['simple']['advanced_link'] = $link;
   $form['simple']['islandora_simple_search_query']['#attributes']['placeholder'] = t("Search Repository");
-
+  $form['simple']['islandora_simple_search_query']['#title_display'] = 'invisible';
 }
 
 function ir7_saas_css_alter(&$css) {
