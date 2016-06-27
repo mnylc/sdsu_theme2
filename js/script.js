@@ -31,8 +31,8 @@
       }
 
       /**
-       * Manually handle adding and removing of classes,
-       * as part of the slide reveal.
+       * @param {string} context
+       *   Current context of the slideshow.
        */
       function update_slide_animation(context) {
         $('.info-content-wrapper').each(function () {
