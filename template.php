@@ -10,7 +10,7 @@
 /**
  * Implements hook_form_alter().
  */
-function ir7_saas_form_islandora_solr_simple_search_form_alter(&$form, &$form_state, $form_id) {
+function retrievium_form_islandora_solr_simple_search_form_alter(&$form, &$form_state, $form_id) {
   $link = array(
     '#markup' => l(t("Advanced Search"), "advanced-search", array('attributes' => array('class' => array('adv-search')))),
   );
@@ -19,7 +19,10 @@ function ir7_saas_form_islandora_solr_simple_search_form_alter(&$form, &$form_st
   $form['simple']['islandora_simple_search_query']['#title_display'] = 'invisible';
 }
 
-function ir7_saas_css_alter(&$css) {
+/**
+ * Implements hook_css_alter().
+ */
+function retrievium_css_alter(&$css) {
   $exclude = array(
     'sites/all/modules/islandora_solution_pack_collection/css/islandora_basic_collection.base.css' => FALSE,
     'sites/all/modules/islandora_solution_pack_collection/css/islandora_basic_collection.theme.css ' => FALSE,

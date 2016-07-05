@@ -26,7 +26,7 @@
   <a href="/islandora/object/<?php print $output;?>" title="<?php print $row->{'dc.title'}[0]?>">
     <div
       class="front-page-slideshow-image"
-      style="background: url(/islandora/object/<?php print $output; ?>/datastream/<?php print theme_get_setting('ir7_saas_background_dsid');?>/view) no-repeat center; background-size: cover;">
+      style="background: url(/islandora/object/<?php print $output; ?>/datastream/<?php print theme_get_setting('retrievium_background_dsid');?>/view) no-repeat center; background-size: cover;">
      </div>
    </a>
 </div>

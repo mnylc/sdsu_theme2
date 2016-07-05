@@ -7,15 +7,15 @@
 /**
  * Implements hook_form_system_theme_settings_alter().
  */
-function ir7_saas_form_system_theme_settings_alter(&$form, &$form_state, $form_id = NULL) {
+function retrievium_form_system_theme_settings_alter(&$form, &$form_state, $form_id = NULL) {
   // Work-around for a core bug affecting admin themes. See issue #943212.
   if (isset($form_id)) {
     return;
   }
- $form['ir7_saas']['ir7_saas_background_dsid'] = array(
+ $form['retrievium']['retrievium_background_dsid'] = array(
     '#type' => 'textfield',
     '#title' => t('Slideshow Image Datastream.'),
-    '#default_value' => theme_get_setting('ir7_saas_background_dsid'),
+    '#default_value' => theme_get_setting('retrievium_background_dsid'),
     '#description' => t("Use this datastream as the front page slideshow image source. Defaults to TN"),
   );
   // Create the form using Forms API: http://api.drupal.org/api/7
