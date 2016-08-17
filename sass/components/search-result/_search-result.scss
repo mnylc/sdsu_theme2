@@ -1,0 +1,150 @@
+// Box
+//
+// A simple box style.
+//
+// A Drupal block is often styled as a box. However, this design component is
+// not applied to any blocks by default; it is used as an example of how to
+// build and document a CSS component.
+//
+// "box" is the name of our component, so we define a `.box` class that we can
+// apply to any HTML element that needs the box styling. We also provide a
+// `%box` placeholder selector so that we can easily extend the basic box
+// component with `@extend %box;`.
+//
+// Take a look at the source code for this component for more information about
+// building a good component.
+//
+// :hover - The hover/focus styling.
+// .box--highlight - The "highlight" box variant.
+//
+// Markup: box.twig
+//
+// Style guide: components.box
+
+.search-results,
+%search-results {
+  width: 100%;
+
+  h1.search-main-title {
+    color: color('teil');
+  }
+
+  .search-tools {
+
+    .search-count-sort {
+
+      > div {
+        display: inline-block;
+        width: 49%;
+      }
+    }
+  }
+
+  .search-main-title {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+  .islandora-solr-query-list,
+  .islandora-solr-filter-list {
+
+    li {
+      @extend %facet-button;
+      color: black;
+
+      &:hover,
+      &:focus,
+      &:active {
+        color: black;
+      }
+    }
+  }
+
+  .remove-fct-x {
+    background-color: color('teil');
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-sizing: border-box;
+    display: block;
+    float: right;
+    padding-right: 5px;
+    padding-left: 6px;
+    color: white;
+    margin-left: 5px;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: black;
+    }
+  }
+}
+
+ul.islandora-solr-sort,
+ul.islandora-solr-query-list {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.islandora-solr-content {
+
+  .solr-fields dt,
+  .solr-fields dd {
+    border: 0;
+  }
+
+  dt.solr-label {
+    width: 0;
+  }
+
+  dl.solr-fields {
+    border: 0;
+  }
+
+  dd.solr-first-meta {
+    font-size: 125%;
+  }
+
+  .islandora-inline-metadata dd {
+    padding-left: 0;
+  }
+
+  .solr-link-obj::before {
+    @extend %box-li-bullet;
+    content: '\f105';
+  }
+}
+
+#block-islandora-solr-current-query {
+  text-align: right;
+
+  h3 {
+    display: none;
+  }
+
+  .islandora-solr-query-list li {
+    display: inline-block;
+  }
+}
+
+#block-islandora-solr-sort {
+  text-align: right;
+
+  .islandora-solr-sort {
+
+    li {
+      display: inline-block;
+      padding: 0 10px;
+
+      a {
+        color: black;
+      }
+    }
+
+    li.last {
+      padding: 0 0 0 10px;
+    }
+  }
+}

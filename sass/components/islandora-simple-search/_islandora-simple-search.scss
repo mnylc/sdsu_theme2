@@ -6,41 +6,82 @@
 //
 // Style guide: components.islandora-simple-search
 
+%font-search-icon {
+  font-family: 'FontAwesome';
+  margin: 0 5px 0 -15px;
+  list-style: none;
+  content: '\f002';
+}
+
 #block-islandora-solr-simple,
 %block-islandora-solr-simple {
-  #edit-simple {
-    padding-top: 7px;
-    text-align: right;
+  border-bottom: 1px solid #ccc;
 
-    .adv-search {
-      font-size: .8em;
-      text-decoration: none;
-    }
+  .block__title,
+  .content {
+    display: inline-block;
+  }
+
+  .block-inner-wrapper {
+    text-align: center;
+  }
+
+  h2::before {
+    @extend %font-search-icon;
+  }
+
+  h2 {
+    color: color('teil');
+  }
+
+  #edit-simple .form-item,
+  #edit-simple #edit-submit,
+  #edit-simple .adv-search  {
+    display: inline-block;
+  }
+
+  .adv-search {
+    @extend %button-link;
+  }
+/*   .adv-search:hover { */
+/*     color: color(button-link-border) !important; */
+/*   } */
+
+  #edit-simple {
+/*     padding-top: 7px; */
+/*     text-align: right; */
+
+/*     .adv-search { */
+/*       font-size: .8em; */
+/*       text-decoration: none; */
+/*     } */
 
     .form-type-textfield {
-      margin: 0;
+      line-height: 2.44em;
+      height: 2.44em;
+/*       margin: 0; */
 
-      .form-text {
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        box-shadow: 0 3px 3px -3px #808184;
-        color: #808184;
-        height: 2.5em;
-        padding-left: .5em;
-        width: 100%;
-      }
+/*       .form-text { */
+/*         border: 1px solid #ccc; */
+/*         border-radius: 5px; */
+/*         box-shadow: 0 3px 3px -3px #808184; */
+/*         color: #808184; */
+/*         height: 2.5em; */
+/*         padding-left: .5em; */
+/*         width: 100%; */
+/*       } */
     }
 
-    .form-submit {
-      background: image-url('images/search_btn.png') no-repeat scroll 0 0 transparent;
-      border: medium none;
-      color: transparent;
-      height: 25px;
-      position: relative;
-      float: right;
-      right: 5px;
-      top: -30px;
-      width: 25px;
-    }
+/*     .form-submit { */
+/*       background: image-url('images/search_btn.png') no-repeat scroll 0 0 transparent; */
+/*       border: medium none; */
+/*       color: transparent; */
+/*       height: 25px; */
+/*       position: relative; */
+/*       float: right; */
+/*       right: 5px; */
+/*       top: -30px; */
+/*       width: 25px; */
+/*     } */
   }
 }

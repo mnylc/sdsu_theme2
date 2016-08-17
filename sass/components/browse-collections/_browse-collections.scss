@@ -1,0 +1,128 @@
+// Box
+//
+// A simple box style.
+//
+// A Drupal block is often styled as a box. However, this design component is
+// not applied to any blocks by default; it is used as an example of how to
+// build and document a CSS component.
+//
+// "box" is the name of our component, so we define a `.box` class that we can
+// apply to any HTML element that needs the box styling. We also provide a
+// `%box` placeholder selector so that we can easily extend the basic box
+// component with `@extend %box;`.
+//
+// Take a look at the source code for this component for more information about
+// building a good component.
+//
+// :hover - The hover/focus styling.
+// .box--highlight - The "highlight" box variant.
+//
+// Markup: box.twig
+//
+// Style guide: components.box
+
+%box-li-bullet {
+  font-family: 'FontAwesome';
+  margin: 0 5px 0 0;
+  color: color(deep-red);
+  list-style-image: none !important;
+  list-style-type: none !important;
+}
+
+.browse-collections,
+%browse-collections {
+  h2 {
+    margin-bottom: 0;
+    margin-top: .5rem;
+
+    a {
+      color: color(sdsu-red);
+      font-weight: lighter;
+      text-decoration: none;
+    }
+  }
+
+  .field-content {
+    margin: 15px;
+  }
+
+  td {
+    width: 50%;
+    box-sizing: border-box;
+    padding: 20px;
+  }
+
+  .views-field-PID {
+    float: left;
+    clear: left;
+  }
+
+  .browse-all-collections-thumb {
+    box-sizing: border-box;
+    margin: 12px;
+  }
+
+  .browse-collections-sub-link {
+    text-align: left;
+
+    li::before {
+      @extend %box-li-bullet;
+      content: '\f105';
+    }
+
+    li {
+      list-style: none;
+      list-style-image: none;
+
+      a {
+        color: color(sdsu-red);
+        font-size: 85%;
+        font-weight: lighter;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.islandora-objects {
+  text-align: center;
+}
+
+.islandora-solr-facet-pages-results {
+  td {
+    box-sizing: border-box;
+    padding: 10px;
+  }
+
+  .views-field-PID {
+    .field-content {
+    h2 {
+      margin-top: .5rem;
+      padding-left: 10px;
+    }
+
+    a,
+    h2 {
+      display: inline-block;
+      vertical-align: top;
+      font-weight: lighter;
+    }
+
+    div {
+      display: table;
+      height: 120px;
+      text-align: center;
+      width: 120px;
+      background-color: color('white');
+      border: 1px solid grey;
+
+      i {
+        display: table-cell;
+        font-size: 60px;
+        vertical-align: middle;
+        color: color(link-visited);
+        }
+      }
+    }
+  }
+}

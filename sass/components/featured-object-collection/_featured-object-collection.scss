@@ -1,0 +1,213 @@
+// Box
+//
+// A simple box style.
+//
+// A Drupal block is often styled as a box. However, this design component is
+// not applied to any blocks by default; it is used as an example of how to
+// build and document a CSS component.
+//
+// "box" is the name of our component, so we define a `.box` class that we can
+// apply to any HTML element that needs the box styling. We also provide a
+// `%box` placeholder selector so that we can easily extend the basic box
+// component with `@extend %box;`.
+//
+// Take a look at the source code for this component for more information about
+// building a good component.
+//
+// :hover - The hover/focus styling.
+// .box--highlight - The "highlight" box variant.
+//
+// Markup: box.twig
+//
+// Style guide: components.box
+
+%font-aw-icon {
+  font-family: 'FontAwesome';
+  margin: 0 5px 0 -15px;
+  color: $font-awesome-colour;
+  list-style: none;
+
+  :link {
+    color: $font-awesome-colour;
+  }
+}
+
+.view-featured-object-collection.view-display-id-page,
+%view-featured-object-collection.view-display-id-page {
+
+  .views-row {
+    width: 100%;
+    max-width: 18%;
+    display: inline-block;
+
+    .view-featured-object-collection--pid {
+      width: 150px;
+      height: 150px;
+    }
+  }
+
+  .views-row-first {
+    width: 100%;
+    max-width: 100%;
+
+    .view-featured-object-collection--top {
+
+      span {
+         font-size: 2rem;
+         color: color('deep-red');
+         display: block;
+         margin: .5em auto;
+      }
+    }
+
+    .view-featured-object-collection--left {
+      display: inline-block;
+      height: 250px;
+      width: 70%;
+
+      .view-featured-object-collection--pid {
+        height: 250px;
+        width: 100%;
+      }
+    }
+
+    .view-featured-object-collection--right {
+      display: inline-block;
+      vertical-align: top;
+      max-width: 28%;
+      box-sizing: border-box;
+      padding: 10px;
+
+      ul {
+        padding-left: 0;
+      }
+
+      li {
+        list-style-type: none;
+        list-style-image: none;
+      }
+
+      li::before {
+        @extend %box-li-bullet;
+        content: '\f105';
+      }
+    }
+  }
+
+}
+
+
+.view-featured-object-collection.view-display-id-block {
+  .views-row {
+    display: inline-block;
+    width: 10%;
+    vertical-align: top;
+    box-sizing: border-box;
+    margin: 10px;
+
+    .field-content {
+      div {
+        text-align: center;
+      }
+    }
+
+    span {
+      display: block;
+      text-align: left;
+      font-style: italic;
+    }
+
+  }
+
+  .view-footer {
+    font-size: 85%;
+
+    ul {
+      padding-left: 0;
+    }
+
+    li {
+      list-style-type: none;
+      list-style-image: none;
+    }
+
+    li::before {
+      @extend %box-li-bullet;
+      content: '\f105';
+    }
+  }
+}
+
+.related-object-block-border-bottom {
+  border-bottom: 1px solid #ccc;
+}
+
+.view-related-featured-object-collection {
+  .views-row {
+    margin-top: 1.3em;
+  }
+
+  .view-content > div {
+    display: inline-block;
+    vertical-align: top;
+    width: 30%;
+
+    .info-image {
+      clear: left;
+      float: left;
+    }
+
+    .info-content {
+      float: left;
+      clear: left;
+    }
+
+    .info-content > span {
+      display: block;
+      width: 100%;
+    }
+
+    .info-content a,
+    .info-content > span a {
+      font-size: 85%;
+
+      &::before {
+        @extend %box-li-bullet;
+        content: '\f105';
+      }
+
+      img {
+        max-width: 100px;
+      }
+    }
+
+    img {
+      height: auto;
+      max-width: 120px;
+      width: 100%;
+    }
+  }
+}
+
+.block.sdsu-inline-block {
+  display: table-cell;
+}
+
+#block-views-submit-a-collection-block {
+  .views-field-title {
+    font-size: 140%;
+
+    a::before {
+      @extend %box-li-bullet;
+      content: '\f105';
+    }
+
+    a {
+      color: color('deep-red');
+    }
+  }
+
+  .views-field-field-sub-description {
+    margin: 5px auto 10px;
+  }
+}

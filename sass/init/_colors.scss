@@ -29,6 +29,10 @@ $chroma: add-colors((
   red:                    #c00,
   yellow:                 #fd0,
   dgi-green:              #419845,
+  teil:                   #00c2c9,
+  near-black:             #111,
+  deep-red:               #c00,
+  background:             #efefef,
 ));
 
 // Define color names for functional uses.
@@ -38,9 +42,13 @@ $chroma: add-colors('functional', (
   text:                   'black',
   text-bg:                'white',
 
-  link:                   'dgi-green',
-  link-visited:           ('dgi-green' lighten 20%),
-  link-active:            'grey-dark',
+  sdsu-red:               'deep-red',
+
+  link:                   'deep-red',
+  link-visited:           ('grey-dark' lighten 20%),
+  link-active:            'teil',
+
+  body-background-color:  'background',
 
   border:                 'grey-light',
 
@@ -51,11 +59,21 @@ $chroma: add-colors('functional', (
 
   body-bg:                'text-bg',
 
-  button:                 'text',
+  button:                 'white',
   button-disabled:        'grey',
+
+  button-background:      'teil',
+
+  button-link-background: 'white',
+
+  button-link-border:     'teil',
+
+  button-link-color:      'menu-gradient-end',
 
   fieldset-summary:       'grey',
   form-error:             'red',
+
+  featured-box:           'near-black',
 
   mark-highlight:         'red',
   mark-bg:                'yellow',

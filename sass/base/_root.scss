@@ -30,7 +30,7 @@ body {
   margin: 0;
   padding: 0;
   color: color(text);
-  background-color: color(text-bg);
+  background-color: color(body-background-color);
 }
 
 .front {
@@ -41,8 +41,39 @@ body {
 
 .not-front {
   main {
-    box-shadow: 0 0 5px 1px rgba(38, 37, 38, .3);
     padding-bottom: 10px;
+  }
+}
+
+.page-title-top {
+  position: relative;
+
+  .view-browse-header-image,
+  .view-browse-facet-page-header-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    div {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+
+.page-title-top--container {
+  display: table;
+  text-align: left;
+  width: 100%;
+  position: relative;
+
+  h1 {
+    color: color('white');
+    text-shadow: 0 0 2px color(near-black); /* Firefox 3.5+, Opera 9+, Safari 1+, Chrome, IE10 */
+    filter: progid:DXImageTransform.Microsoft.Glow(Color=#000000,Strength=1); /* IE<10 */
+    margin-bottom: 0;
+    font-weight: lighter;
+    margin-bottom: -5px;
   }
 }
 
@@ -50,7 +81,6 @@ aside {
   padding: 10px;
 
   .aside-inner {
-    box-shadow: 0 0 5px 1px rgba(38, 37, 38, .3);
     background-color: white;
     box-sizing: border-box;
     float: left;

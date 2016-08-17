@@ -7,16 +7,65 @@
  * @see https://drupal.org/node/1728148
  */
 ?>
-
-<div class="layout-center">
-
   <header class="header" role="banner">
 
     <?php print render($page['header']); ?>
 
-    <?php if ($logo): ?>
-      <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="header__logo"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" class="header__logo-image" /></a>
-    <?php endif; ?>
+
+    <div class="logo-menu-wrapper layout-center">
+      <div class="header--block-one">
+        <?php if ($logo): ?>
+          <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="header__logo"><img src="/<?php print $logo; ?>" alt="<?php print t('Home'); ?>" class="header__logo-image" /></a>
+        <?php endif; ?>
+
+        <div class="logo-one">
+          <?php if ($sdsu_theme_use_first_header_logo): ?>
+            <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="header__logo"><img src="/<?php print $sdsu_theme_use_first_header_logo; ?>" alt="<?php print t('Home'); ?>" class="header__logo-image" /></a>
+          <?php endif; ?>
+        </div>
+
+
+        <div class="logo-two">
+          <?php if ($sdsu_theme_use_second_header_logo): ?>
+            <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="header__logo"><img src="/<?php print $sdsu_theme_use_second_header_logo; ?>" alt="<?php print t('Home'); ?>" class="header__logo-image" /></a>
+          <?php endif; ?>
+        </div>
+      </div>
+
+
+
+
+    <div class="header-main-menu">
+
+      <a href="#skip-link" class="visually-hidden--focusable" id="main-menu" tabindex="-1">Back to top</a>
+
+      <?php if ($main_menu): ?>
+        <nav class="main-menu" role="navigation">
+          <?php
+          // This code snippet is hard to modify. We recommend turning off the
+          // "Main menu" on your sub-theme's settings form, deleting this PHP
+          // code block, and, instead, using the "Menu block" module.
+          // @see https://drupal.org/project/menu_block
+          print theme('links__system_main_menu', array(
+            'links' => $main_menu,
+            'attributes' => array(
+              'class' => array('navbar', 'clearfix'),
+            ),
+            'heading' => array(
+              'text' => t('Main menu'),
+              'level' => 'h2',
+              'class' => array('visually-hidden'),
+            ),
+          )); ?>
+        </nav>
+      <?php endif; ?>
+
+      <?php print render($page['navigation']); ?>
+
+    </div>
+      <?php print $simple_search;?>
+    </div>
+
 
     <?php if ($site_name || $site_slogan): ?>
       <div class="header__name-and-slogan">
@@ -50,6 +99,27 @@
 
   </header>
 
+<div class="top-region-wrapper">
+  <?php print render($page['top']); ?>
+
+</div>
+
+<div class="page-title-top">
+  <?php print views_embed_view('browse_header_image', 'block', $header_arg);?>
+  <?php print views_embed_view('browse_facet_page_header_image', 'block', $facet_header_arg);?>
+  <?php if ($title): ?>
+    <div class="page-title-top--container layout-center">
+      <h1><?php print $title; ?></h1>
+    </div>
+  <?php endif; ?>
+</div>
+<div class="bread-wrapper">
+  <div class="bread layout-center">
+    <?php print $breadcrumb; ?>
+  </div>
+</div>
+
+<div class="layout-center">
   <div class="layout-3col layout-swap">
 
     <?php
@@ -72,15 +142,12 @@
       endif;
     ?>
 
-    <?php print $breadcrumb; ?>
     <main class="<?php print $content_class; ?>" role="main">
       <?php print render($page['highlighted']); ?>
 
       <a href="#skip-link" class="visually-hidden--focusable" id="main-content">Back to top</a>
       <?php print render($title_prefix); ?>
-      <?php if ($title): ?>
-        <h1><?php print $title; ?></h1>
-      <?php endif; ?>
+
       <?php print render($title_suffix); ?>
       <?php print $messages; ?>
       <?php print render($tabs); ?>
@@ -91,35 +158,6 @@
       <?php print render($page['content']); ?>
       <?php print $feed_icons; ?>
     </main>
-
-    <div class="layout-swap__top layout-3col__full">
-
-      <a href="#skip-link" class="visually-hidden--focusable" id="main-menu" tabindex="-1">Back to top</a>
-
-      <?php if ($main_menu): ?>
-        <nav class="main-menu" role="navigation">
-          <?php
-          // This code snippet is hard to modify. We recommend turning off the
-          // "Main menu" on your sub-theme's settings form, deleting this PHP
-          // code block, and, instead, using the "Menu block" module.
-          // @see https://drupal.org/project/menu_block
-          print theme('links__system_main_menu', array(
-            'links' => $main_menu,
-            'attributes' => array(
-              'class' => array('navbar', 'clearfix'),
-            ),
-            'heading' => array(
-              'text' => t('Main menu'),
-              'level' => 'h2',
-              'class' => array('visually-hidden'),
-            ),
-          )); ?>
-        </nav>
-      <?php endif; ?>
-
-      <?php print render($page['navigation']); ?>
-
-    </div>
 
     <?php if ($sidebar_first): ?>
       <aside class="<?php print $sidebar_first_class; ?>" role="complementary">
@@ -139,8 +177,43 @@
 
   </div>
 
-  <?php print render($page['footer']); ?>
+
+
+</div>
+<div class="sub-content-region layout-center">
+  <?php print render($page['sub_content']); ?>
+</div>
+
+
+<?php print render($page['footer']); ?>
+
+<div class="page-bottom">
+  <div class="page-bottom--standard layout-center">
+    <div class="footer-menu-wrapper">
+    <div class="logo-one">
+      <?php if ($sdsu_theme_use_first_header_logo): ?>
+        <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="header__logo"><img src="/<?php print $sdsu_theme_use_first_footer_logo; ?>" alt="<?php print t('Home'); ?>" class="header__logo-image" /></a>
+      <?php endif; ?>
+    </div>
+
+    <div class="logo-two">
+      <?php if ($sdsu_theme_use_second_header_logo): ?>
+        <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="header__logo"><img src="/<?php print $sdsu_theme_use_second_footer_logo; ?>" alt="<?php print t('Home'); ?>" class="header__logo-image" /></a>
+      <?php endif; ?>
+    </div>
+
+    <div class="copyright--menu">
+
+      <p><?php print t("© 2015 SDSU Library & Information Access. All Rights Reserved.");?></p>
+
+      <?php print render($page['navigation']); ?>
+
+    </div>
+    </div>
+  </div>
+  <div class="page-bottom--region">
+    <?php print render($page['bottom']); ?>
+  </div>
 
 </div>
 
-<?php print render($page['bottom']); ?>

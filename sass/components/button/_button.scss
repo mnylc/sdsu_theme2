@@ -28,6 +28,9 @@
   // Improve usability and consistency of cursor style between image-type `input` and others.
   cursor: pointer;
   color: color(button);
+  background-color: color(button-background);
+  border: 0;
+  padding: 10px 20px;
 
   &:hover,
   &:focus,
@@ -52,5 +55,40 @@
       // Override any link underlines and color changes.
       color: color(button-disabled);
     }
+  }
+}
+
+.facet-button,
+%facet-button {
+  @extend %button;
+  background-color: color('white');
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: black;
+
+  a:hover {
+    color: black;
+  }
+}
+
+.button-link,
+%button-link {
+  @extend %button;
+  background-color: color(button-link-background);
+  border: 1px solid color(button-link-border);
+  color: color(button-link-color);
+  padding-top: 3px;
+  padding-bottom: 3px;
+  max-width: 100px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 1.2em !important;
+  margin-bottom: 3px;
+
+  &:hover,
+  &:active {
+    color: color(button-link-border) !important;
   }
 }

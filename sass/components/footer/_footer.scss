@@ -9,11 +9,22 @@
 //
 // Style guide: components.footer
 
+%font-aw-icon {
+  font-family: 'FontAwesome';
+  margin: 0 5px 0 -15px;
+  color: $font-awesome-colour;
+  list-style: none;
+
+  :link {
+    color: $font-awesome-colour;
+  }
+}
 
 .footer,
 #footer,
 %footer {
   @include clearfix();
+  background-color: #292929;
   margin-top: 1.8em;
   display: block;
 
@@ -21,30 +32,112 @@
     float: left;
   }
 
-  #block-menu-menu-footer-menu {
-    @include clearfix();
-    float: left;
-    font-size: 75%;
+  &--inner-div {
+    display: table;
+    width: 100%;
+    text-align: right;
 
-    ul {
-      list-style: none;
-      margin: 1em 0;
+    .block {
+      display: table-cell;
+      vertical-align: middle;
+    }
 
-      li {
-       display: inline-block;
-       margin-right: 1em;
+    #block-menu-menu-contact-menu {
+      .nav-menu__item,
+      .menu__item {
+        list-style: none !important;
+      }
 
-        a,
-        a:visited {
-          color: #424143;
-          text-decoration: none;
+      ul.menu {
+        display: inline-block;
+        list-style-type: none;
+
+        li {
+          display: inline-block;
+          text-indent: 1.6em;
+
+          a,
+          .menu__link {
+            font-size: 75%;
+            list-style: none !important;
+            text-decoration: none !important;
+            color: $font-awesome-colour;
+
+            &:hover {
+              color: white;
+            }
+
+          }
+        }
+
+        .phone::before {
+          @extend %font-aw-icon;
+          content: '\f095';
+        }
+
+        .chat-with-lib::before {
+          @extend %font-aw-icon;
+          content: '\f075';
+        }
+
+        .email-sdsu::before {
+          @extend %font-aw-icon;
+          content: '\f0e0';
+        }
+
+        .address::before {
+          @extend %font-aw-icon;
+          content: '\f015';
         }
 
         a:hover {
-          color: #419845;
+          color: white;
+        }
+      }
+    }
+  }
+
+  #block-menu-menu-footer-menu {
+    @include clearfix();
+    float: left;
+    text-align: left;
+
+    ul.menu {
+      font-size: 75%;
+      list-style: none;
+      padding-left: 5px;
+      margin: 1rem 0;
+
+      li {
+        list-style: none;
+        line-height: 1.3rem;
+
+        a,
+        a:visited {
+          color: white;
+          text-decoration: none;
         }
 
       }
+
+      .browse-dept::before {
+        @extend %font-aw-icon;
+        content: '\f1ad';
+        color: white;
+      }
+
+      .browse-type::before {
+        @extend %font-aw-icon;
+        content: '\f0ca';
+        color: white;
+      }
+
+      .browse-featured::before {
+        @extend %font-aw-icon;
+        content: '\f006';
+        color: white;
+      }
+
     }
   }
 
@@ -62,4 +155,29 @@
 
   }
 
+}
+
+.page-bottom {
+  background-color: black;
+  border-top: 2px solid color(deep-red);
+  display: table;
+  width: 100%;
+
+  .page-bottom--standard {
+    padding: 0;
+  }
+
+  .footer-menu-wrapper > div {
+    display: inline-block;
+    vertical-align: middle;
+    color: $font-awesome-colour;
+  }
+
+  .copyright--menu {
+    clear: right;
+    float: right;
+    margin-top: 10px;
+    font-size: 75%;
+    padding-right: 12px;
+  }
 }

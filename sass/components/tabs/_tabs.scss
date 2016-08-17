@@ -46,7 +46,7 @@
   &__tab {
     width: 100%;
     float: left;
-    margin: 5px 0;
+    margin: 5px;
     border: 1px solid color(tabs-border);
     @if support-for(ie, 9) {
       // IE 9 and earlier don't understand gradients.
@@ -65,9 +65,9 @@
         // Allow the tabs gradient to appear just below the tab.
         border-bottom-color: transparent;
         width: auto;
-        margin: 0;
-        border-top-left-radius: 8px;
-        border-top-right-radius: 8px;
+        margin: 0 5px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
       }
 
       &.is-active {

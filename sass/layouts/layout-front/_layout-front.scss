@@ -144,3 +144,156 @@
     }
   }
 }
+
+.region-sub-content {
+  text-align: center;
+}
+
+.navigation-region-wrapper {
+  display: table;
+  width: 100%;
+  background-color: white;
+}
+
+.view-gallery {
+  .desc-field {
+    display: none !important;
+  }
+}
+
+  .inner-nav {
+    #block-views-gallery-block-1 {
+      width: 100%;
+      display: block;
+      vertical-align: middle;
+      border-right: 1px solid #ccc;
+      border-left: 1px solid #ccc;
+    }
+
+    #block-views-notices-block {
+      width: 100%;
+      display: block;
+      vertical-align: middle;
+      border-right: 1px solid #ccc;
+      border-left: 1px solid #ccc;
+
+      .flex-direction-nav a.flex-next::before {
+        @extend %font-aw-icon;
+        font-size: 100%;
+        display: block;
+        opacity: 1;
+        content: '\f0d8';
+      }
+
+      .flex-direction-nav a {
+        display: block;
+        opacity: 1;
+        width: 20px;
+        height: 20px;
+      }
+
+      .flex-direction-nav a.flex-prev::before {
+        @extend %font-aw-icon;
+        font-size: 100%;
+        content: '\f0d7';
+      }
+
+      .flex-direction-nav a.flex-prev {
+        right: 10px;
+        text-align: right;
+        left: auto;
+        top: 80%;
+
+        &:hover {
+          right: 10px;
+        }
+      }
+
+      .field-content {
+        p {
+          margin-top: 0;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+@include zen-respond-to(m) {
+  .view-gallery {
+     .desc-field {
+      display: block !important;
+    }
+  }
+
+  .inner-nav {
+    #block-views-gallery-block-1 {
+      width: 30%;
+      display: inline-block;
+      vertical-align: middle;
+      border-right: 1px solid #ccc;
+      border-left: 1px solid #ccc;
+    }
+
+    #flex-gallery .flex-direction-nav .flex-next {
+      right: 48% !important;
+    }
+
+    #block-views-notices-block {
+      width: 68%;
+      display: inline-block;
+      vertical-align: middle;
+      border-right: 1px solid #ccc;
+      border-left: 0;
+
+      .flex-direction-nav a.flex-next::before {
+        font-size: 100%;
+        display: block;
+        opacity: 1;
+      }
+
+      .flex-direction-nav a {
+        display: block;
+        opacity: 1;
+        width: 20px;
+        height: 20px;
+      }
+
+      .flex-next {
+        opacity: 1;
+        padding-top: 20px;
+        right: 48% !important;
+        height: 50px;
+      }
+
+      .flex-prev {
+        left: 10% !important;
+        opacity: 1;
+        height: 50px;
+        padding-top: 20px;
+      }
+
+      .flex-direction-nav a.flex-prev::before {
+        font-size: 100%;
+      }
+
+      .flex-direction-nav a.flex-prev {
+        right: 10px;
+        text-align: right;
+        left: auto;
+        top: 80%;
+
+        &:hover {
+          right: 10px;
+        }
+      }
+
+      .field-content {
+
+        p {
+          margin-top: 0;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

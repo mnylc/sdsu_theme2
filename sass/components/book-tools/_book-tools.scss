@@ -1,0 +1,62 @@
+// Box
+//
+// A simple box style.
+//
+// A Drupal block is often styled as a box. However, this design component is
+// not applied to any blocks by default; it is used as an example of how to
+// build and document a CSS component.
+//
+// "box" is the name of our component, so we define a `.box` class that we can
+// apply to any HTML element that needs the box styling. We also provide a
+// `%box` placeholder selector so that we can easily extend the basic box
+// component with `@extend %box;`.
+//
+// Take a look at the source code for this component for more information about
+// building a good component.
+//
+// :hover - The hover/focus styling.
+// .box--highlight - The "highlight" box variant.
+//
+// Markup: box.twig
+//
+// Style guide: components.box
+
+.book-page-tools,
+%book-page-tools {
+  > div {
+    display: inline-block;
+  }
+
+  #book-page-viewer {
+    width: 80%;
+  }
+
+  .view-subsequent-pages {
+    width: 100%;
+    position: relative;
+    max-height: 500px;
+    overflow: scroll;
+
+    .item-list {
+      position: absolute;
+      top: 0;
+    }
+
+    &--image img {
+      max-width: 100px;
+    }
+
+    .views-row {
+      text-align: center;
+
+      p {
+        margin-top: 0;
+        margin-bottom: .5em;
+      }
+    }
+  }
+
+  .subsequent-pages-wrapper {
+    width: 18%;
+  }
+}
