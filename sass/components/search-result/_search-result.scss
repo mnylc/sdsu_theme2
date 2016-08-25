@@ -82,6 +82,12 @@
   }
 }
 
+.page-islandora-search {
+  .islandora-solr-content {
+    border-top: 1px solid color(grey-light);
+  }
+}
+
 ul.islandora-solr-sort,
 ul.islandora-solr-query-list {
   margin-top: 0;

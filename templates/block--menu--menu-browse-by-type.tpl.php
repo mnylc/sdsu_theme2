@@ -60,7 +60,7 @@
   </div>
   <div class="featured-box--bottom-link">
     <ul>
-      <li><a href="http://discoverygarden-vsphere-saas.local/browse/browse-type"><?php print t("See All Types");?></a></li>
+      <li><a href="/browse/browse-type"><?php print t("See All Types");?></a></li>
     </ul>
   </div>
 </div>

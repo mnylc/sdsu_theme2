@@ -8,6 +8,10 @@
 //
 // Style guide: components.header
 
+.header__logo-image {
+  max-width: 120px;
+}
+
 .header,
 %header {
   @extend %clearfix;
@@ -44,6 +48,7 @@
   // Logo image.
   &__logo-image {
     vertical-align: bottom;
+    max-width: 120px;
   }
 
   // Wrapper for website name and slogan.
@@ -138,6 +143,12 @@ header {
     }
   }
 
+  .logo-two {
+    img {
+      max-width: 100px;
+    }
+  }
+
   .header-main-menu {
     width: 100%;
 
@@ -193,6 +204,7 @@ header {
       .logo-two {
         width: auto;
       }
+
     }
 
     .header-main-menu {
@@ -207,10 +219,39 @@ header {
 }
 }
 
+header {
+  .logo-menu-wrapper {
+    .logo-two,
+    .logo-one {
+      width: 40%;
+      img {
+        margin-top: 10px;
+      }
+    }
+  }
+
+  .header-main-menu {
+    a {
+      color: color(header-lnk);
+    }
+  }
+}
+
+    
 @include zen-respond-to(m) {
    header,
    .header {
      text-align: left;
+
+    .logo-menu-wrapper {
+      .logo-two,
+      .logo-one {
+        width: auto;
+        img {
+          margin-top: auto;
+        }
+      }
+    }
 
      &__region {
        padding-bottom: 5px;

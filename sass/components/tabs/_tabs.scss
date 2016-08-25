@@ -84,7 +84,7 @@
     transition: color .3s, background .3s, border .3s;
     text-shadow: color(tab-text-shadow) 0 1px 0;
 
-    color: color(tab);
+    color: color(white);
     background: color(tab-bg);
     letter-spacing: 1px;
 
@@ -96,8 +96,9 @@
     &:active,
     &.is-active,
     &--is-active {
-      background: color(tabs-bg);
+      background: color(teil);
       text-shadow: none;
+      color: color(white);
     }
   }
 
