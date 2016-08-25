@@ -29,10 +29,11 @@ $chroma: add-colors((
   red:                    #c00,
   yellow:                 #fd0,
   dgi-green:              #419845,
-  teil:                   #00c2c9,
+  teil:                   #00cad2,
   near-black:             #111,
   deep-red:               #c00,
   background:             #efefef,
+  lesser-black:           #1a1818
 ));
 
 // Define color names for functional uses.
@@ -41,6 +42,7 @@ $chroma: add-colors('functional', (
   // Colors used in the main content area.
   text:                   'black',
   text-bg:                'white',
+  header-lnk:             'lesser-black',
 
   sdsu-red:               'deep-red',
 
