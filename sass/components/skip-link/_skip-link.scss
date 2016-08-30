@@ -11,7 +11,9 @@
 
 .skip-link,
 %skip-link {
-  display: block;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  display: none;
   padding: 2px 0 3px;
   text-align: center;
 
@@ -28,4 +30,9 @@
       display: none;
     }
   }
+}
+
+#skip-link {
+  display: none;
+  margin: 0;
 }
