@@ -12,10 +12,10 @@ function sdsu_theme_form_system_theme_settings_alter(&$form, &$form_state, $form
   if (isset($form_id)) {
     return;
   }
-  $form['sdsu_theme']['retrievium_background_dsid'] = array(
+  $form['sdsu_theme']['sdsu_theme_background_dsid'] = array(
     '#type' => 'textfield',
     '#title' => t('Slideshow Image Datastream.'),
-    '#default_value' => theme_get_setting('retrievium_background_dsid'),
+    '#default_value' => theme_get_setting('sdsu_theme_background_dsid'),
     '#description' => t("Use this datastream as the front page slideshow image source. Defaults to TN"),
   );
 
