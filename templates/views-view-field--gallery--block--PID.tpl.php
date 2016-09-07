@@ -27,7 +27,7 @@
     <div
       class="front-page-slideshow-image-pid"
       data-pid="<?php print $output; ?>"
-      style="background: url(/islandora/object/<?php print $output; ?>/datastream/OBJ/view) no-repeat center; background-size: cover;">
+      style="background: url(/islandora/object/<?php print $output; ?>/datastream/<?php print theme_get_setting('sdsu_theme_background_dsid'); ?>/view) no-repeat center; background-size: cover;">
      </div>
    </a>
 </div>

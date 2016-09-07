@@ -135,6 +135,7 @@ settings[zen_skip_link_text]       = Jump to navigation
 settings[zen_meta][]               = html5
 settings[zen_meta][]               = meta
 settings[zen_rebuild_registry]     = 1
+settings[sdsu_theme_background_dsid] = TN
 
 ; To make this sub-theme an admin theme with shortcut links next to titles,
 ; uncomment the line below.
