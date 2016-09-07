@@ -22,7 +22,6 @@
  * the view is modified.
  */
 ?>
-<?php dsm(theme_get_setting('sdsu_theme_background_dsid'), "theme settings");?>
 <div class="front-page-slideshow-wrapper">
   <a href="/islandora/object/<?php print $output;?>" title="<?php print $row->{'dc.title'}[0]?>">
     <div
