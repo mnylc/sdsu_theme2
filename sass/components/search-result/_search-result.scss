@@ -101,7 +101,12 @@ ul.islandora-solr-query-list {
     border: 0;
   }
 
-  dt.solr-label {
+  dt.label-value {
+    padding: 5px;
+    width: 20.625%;
+  }
+
+  dt.label-empty {
     padding: 5px;
     width: auto;
   }
