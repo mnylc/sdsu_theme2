@@ -43,10 +43,6 @@ function sdsu_theme_preprocess_islandora_solr_wrapper(&$variables) {
   $variables['your_search'] = "<h1 class='search-main-title'>" . t("You Searched ") . '"' . $_islandora_solr_queryclass->solrQuery . '"' . "</h1>";
 }
 
-function sdsu_theme_islandora_solr_facet_bucket_classes_alter(&$buckets, &$query_processor) {
-//   dsm($buckets, "query_processor");islandora_paged_content_set_relationship($rels_ext, ISLANDORA_RELS_EXT_URI, 'isPageOf', $params['parent']);
-}
-
 /**
  * Implements hook_css_alter().
  */
