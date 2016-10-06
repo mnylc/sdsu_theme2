@@ -39,16 +39,14 @@
                 <?php $link_text = $value['value'];?>
               <?php endif;?>
 
-
-              <dt class="solr-label <?php print $value['class']; ?>">
+              <?php $label_class = !empty($value['label']) && $value['label'] != "<none>" ? "label-value" : "label-empty" ;?>
+              <dt class="solr-label <?php print $value['class']; ?> <?php print $label_class;?>">
                 <?php print $value['label']; ?>
               </dt>
               <dd class="solr-value <?php print $value['class']; ?>">
                 <?php print $value['value']; ?>
               </dd>
             <?php endforeach; ?>
-              <dt class="solr-label">
-              </dt>
               <dd class="solr-value">
                 <?php $link_text = isset($link_text) ? str_replace("<span class='toggle-wrapper'><span>", "", $link_text) : $link_text;?>
                 <?php $des_label = isset($link_text) ? substr($link_text, 0, 20) . ' ...' : $result['object_label'] . ' ...'; ?>
