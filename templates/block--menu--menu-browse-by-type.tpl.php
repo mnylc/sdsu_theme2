@@ -60,7 +60,7 @@
   </div>
   <div class="featured-box--bottom-link">
     <ul>
-      <li><a href="/browse/browse-type"><?php print t("See All Types");?></a></li>
+      <li><a href="/browse-by-type"><?php print t("See All Types");?></a></li>
     </ul>
   </div>
 </div>

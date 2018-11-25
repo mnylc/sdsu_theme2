@@ -8,28 +8,37 @@
  */
 ?>
   <header class="header" role="banner">
+
     <?php print render($page['header']); ?>
+
+
     <div class="logo-menu-wrapper layout-center">
+      <div class="header--block-one">
         <?php if ($logo): ?>
-      <a href="<?php print $front_page; ?>" title="<?php print t('sdsu digital library logo'); ?>" rel="home" class="header__logo"><img src="<?php print $logo; ?>" alt="<?php print t('sdsu digital library logo'); ?>" class="header__logo-image" /></a>
-    <?php endif; ?>
-    <div class="logo-two">
-      <?php if ($sdsu_theme_use_second_header_logo): ?>
-        <a href="<?php print $front_page; ?>" title="<?php print t('sdsu logo'); ?>" rel="home" class="header__logo"><img src="/<?php print $sdsu_theme_use_second_header_logo; ?>" alt="<?php print t('sdsu logo'); ?>" class="header__logo-image" /></a>
-      <?php endif; ?>
-    </div>
-    <div class="logo-one">
-      <?php if ($sdsu_theme_use_first_header_logo): ?>
-        <h1><a href="<?php print $front_page; ?>" title="<?php print t('sdsu digital library logo'); ?>" rel="home" class="header__logo">
-		SDSUnbound<br>
-		<small>Scholarship. Research. Heritage.</small><!--<img src="/<?php print $sdsu_theme_use_first_header_logo; ?>" alt="<?php print t('sdsu digital library logo'); ?>" class="header__logo-image" />-->
-	</a></h1>
-      <?php endif; ?>
-    </div>
+          <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="header__logo"><img src="/<?php print $logo; ?>" alt="<?php print t('Home'); ?>" class="header__logo-image" /></a>
+        <?php endif; ?>
+
+        <div class="logo-one">
+          <?php if ($sdsu_theme_use_first_header_logo): ?>
+            <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="header__logo"><img src="/<?php print $sdsu_theme_use_first_header_logo; ?>" alt="<?php print t('Home'); ?>" class="header__logo-image" /></a>
+          <?php endif; ?>
+        </div>
+
+
+        <div class="logo-two">
+          <?php if ($sdsu_theme_use_second_header_logo): ?>
+            <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="header__logo"><img src="/<?php print $sdsu_theme_use_second_header_logo; ?>" alt="<?php print t('Home'); ?>" class="header__logo-image" /></a>
+          <?php endif; ?>
+        </div>
+      </div>
+
+
 
 
     <div class="header-main-menu">
+
       <a href="#skip-link" class="visually-hidden--focusable" id="main-menu" tabindex="-1">Back to top</a>
+
       <?php if ($main_menu): ?>
         <nav class="main-menu" role="navigation">
           <?php
@@ -50,8 +59,14 @@
           )); ?>
         </nav>
       <?php endif; ?>
+
+      <?php print render($page['navigation']); ?>
+
     </div>
+      <?php print $simple_search;?>
     </div>
+
+
     <?php if ($site_name || $site_slogan): ?>
       <div class="header__name-and-slogan">
         <?php if ($site_name): ?>
@@ -59,11 +74,13 @@
             <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" class="header__site-link" rel="home"><span><?php print $site_name; ?></span></a>
           </h1>
         <?php endif; ?>
+
         <?php if ($site_slogan): ?>
           <div class="header__site-slogan"><?php print $site_slogan; ?></div>
         <?php endif; ?>
       </div>
     <?php endif; ?>
+
     <?php if ($secondary_menu): ?>
       <nav class="header__secondary-menu" role="navigation">
         <?php print theme('links__system_secondary_menu', array(
@@ -79,15 +96,26 @@
         )); ?>
       </nav>
     <?php endif; ?>
+
   </header>
 
 <div class="top-region-wrapper">
   <?php print render($page['top']); ?>
+
 </div>
 
-<div class="navigation-region-wrapper">
-  <div class="layout-center inner-nav">
-    <?php print render($page['navigation']); ?>
+<div class="page-title-top">
+  <?php print views_embed_view('browse_header_image', 'block', $header_arg);?>
+  <?php print views_embed_view('browse_facet_page_header_image', 'block', $facet_header_arg);?>
+  <?php if ($title): ?>
+    <div class="page-title-top--container layout-center">
+      <h1><?php print $title; ?></h1>
+    </div>
+  <?php endif; ?>
+</div>
+<div class="bread-wrapper">
+  <div class="bread layout-center">
+    <?php print $breadcrumb; ?>
   </div>
 </div>
 
@@ -114,15 +142,12 @@
       endif;
     ?>
 
-<!--    <?php print $breadcrumb; ?>-->
     <main class="<?php print $content_class; ?>" role="main">
       <?php print render($page['highlighted']); ?>
 
       <a href="#skip-link" class="visually-hidden--focusable" id="main-content">Back to top</a>
       <?php print render($title_prefix); ?>
-      <?php if ($title): ?>
-        <h1><?php print $title; ?></h1>
-      <?php endif; ?>
+
       <?php print render($title_suffix); ?>
       <?php print $messages; ?>
       <?php print render($tabs); ?>
@@ -165,27 +190,23 @@
 <div class="page-bottom">
   <div class="page-bottom--standard layout-center">
     <div class="footer-menu-wrapper">
-    <div class="logo-two">
-      <?php if ($sdsu_theme_use_second_header_logo): ?>
-        <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="header__logo">
-		<img src="/sites/all/themes/sdsu_theme/images/logo-sdsu-wht.png" alt="sdsu horizontal logo white" /><!--<img src="/<?php print $sdsu_theme_use_second_header_logo; ?>" alt="<?php print t('Home'); ?>" class="header__logo-image" />-->
-	</a>
-      <?php endif; ?>
-    </div>
     <div class="logo-one">
       <?php if ($sdsu_theme_use_first_header_logo): ?>
-        <h1><a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="header__logo">
-		SDSUnbound<br>
-		<small>Scholarship. Research. Heritage.</small><!--<img src="/<?php print $sdsu_theme_use_first_header_logo; ?>" alt="<?php print t('Home'); ?>" class="header__logo-image" />-->
-	</a></h1>
+        <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="header__logo"><img src="/<?php print $sdsu_theme_use_first_footer_logo; ?>" alt="<?php print t('Home'); ?>" class="header__logo-image" /></a>
+      <?php endif; ?>
+    </div>
+
+    <div class="logo-two">
+      <?php if ($sdsu_theme_use_second_header_logo): ?>
+        <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="header__logo"><img src="/<?php print $sdsu_theme_use_second_footer_logo; ?>" alt="<?php print t('Home'); ?>" class="header__logo-image" /></a>
       <?php endif; ?>
     </div>
 
     <div class="copyright--menu">
 
-      <p><?php print t("© 2017 SDSU Library & Information Access. All Rights Reserved.");?></p>
+      <p><?php print t("© 2015 SDSU Library & Information Access. All Rights Reserved.");?></p>
 
-
+      <?php print render($page['navigation']); ?>
 
     </div>
     </div>

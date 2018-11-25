@@ -60,7 +60,7 @@
   </div>
   <div class="featured-box--bottom-link">
     <ul>
-      <li><a href="/browse/browse-all-departments"><?php print t("See All Departments");?></a></li>
+      <li><a href="/browse-by-college"><?php print t("See All Colleges");?></a></li>
     </ul>
   </div>
 </div>

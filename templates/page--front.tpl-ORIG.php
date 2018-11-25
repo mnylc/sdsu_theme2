@@ -11,23 +11,18 @@
     <?php print render($page['header']); ?>
     <div class="logo-menu-wrapper layout-center">
         <?php if ($logo): ?>
-      <a href="<?php print $front_page; ?>" title="<?php print t('sdsu digital library logo'); ?>" rel="home" class="header__logo"><img src="<?php print $logo; ?>" alt="<?php print t('sdsu digital library logo'); ?>" class="header__logo-image" /></a>
+      <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="header__logo"><img src="/<?php print $logo; ?>" alt="<?php print t('Home'); ?>" class="header__logo-image" /></a>
     <?php endif; ?>
-    <div class="logo-two">
-      <?php if ($sdsu_theme_use_second_header_logo): ?>
-        <a href="<?php print $front_page; ?>" title="<?php print t('sdsu logo'); ?>" rel="home" class="header__logo"><img src="/<?php print $sdsu_theme_use_second_header_logo; ?>" alt="<?php print t('sdsu logo'); ?>" class="header__logo-image" /></a>
-      <?php endif; ?>
-    </div>
     <div class="logo-one">
       <?php if ($sdsu_theme_use_first_header_logo): ?>
-        <h1><a href="<?php print $front_page; ?>" title="<?php print t('sdsu digital library logo'); ?>" rel="home" class="header__logo">
-		SDSUnbound<br>
-		<small>Scholarship. Research. Heritage.</small><!--<img src="/<?php print $sdsu_theme_use_first_header_logo; ?>" alt="<?php print t('sdsu digital library logo'); ?>" class="header__logo-image" />-->
-	</a></h1>
+        <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="header__logo"><img src="/<?php print $sdsu_theme_use_first_header_logo; ?>" alt="<?php print t('Home'); ?>" class="header__logo-image" /></a>
       <?php endif; ?>
     </div>
-
-
+    <div class="logo-two">
+      <?php if ($sdsu_theme_use_second_header_logo): ?>
+        <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="header__logo"><img src="/<?php print $sdsu_theme_use_second_header_logo; ?>" alt="<?php print t('Home'); ?>" class="header__logo-image" /></a>
+      <?php endif; ?>
+    </div>
     <div class="header-main-menu">
       <a href="#skip-link" class="visually-hidden--focusable" id="main-menu" tabindex="-1">Back to top</a>
       <?php if ($main_menu): ?>
@@ -114,7 +109,7 @@
       endif;
     ?>
 
-<!--    <?php print $breadcrumb; ?>-->
+    <?php print $breadcrumb; ?>
     <main class="<?php print $content_class; ?>" role="main">
       <?php print render($page['highlighted']); ?>
 
@@ -165,25 +160,21 @@
 <div class="page-bottom">
   <div class="page-bottom--standard layout-center">
     <div class="footer-menu-wrapper">
-    <div class="logo-two">
-      <?php if ($sdsu_theme_use_second_header_logo): ?>
-        <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="header__logo">
-		<img src="/sites/all/themes/sdsu_theme/images/logo-sdsu-wht.png" alt="sdsu horizontal logo white" /><!--<img src="/<?php print $sdsu_theme_use_second_header_logo; ?>" alt="<?php print t('Home'); ?>" class="header__logo-image" />-->
-	</a>
-      <?php endif; ?>
-    </div>
     <div class="logo-one">
       <?php if ($sdsu_theme_use_first_header_logo): ?>
-        <h1><a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="header__logo">
-		SDSUnbound<br>
-		<small>Scholarship. Research. Heritage.</small><!--<img src="/<?php print $sdsu_theme_use_first_header_logo; ?>" alt="<?php print t('Home'); ?>" class="header__logo-image" />-->
-	</a></h1>
+        <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="header__logo"><img src="/<?php print $sdsu_theme_use_first_footer_logo; ?>" alt="<?php print t('Home'); ?>" class="header__logo-image" /></a>
+      <?php endif; ?>
+    </div>
+
+    <div class="logo-two">
+      <?php if ($sdsu_theme_use_second_header_logo): ?>
+        <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="header__logo"><img src="/<?php print $sdsu_theme_use_second_footer_logo; ?>" alt="<?php print t('Home'); ?>" class="header__logo-image" /></a>
       <?php endif; ?>
     </div>
 
     <div class="copyright--menu">
 
-      <p><?php print t("© 2017 SDSU Library & Information Access. All Rights Reserved.");?></p>
+      <p><?php print t("© 2015 SDSU Library & Information Access. All Rights Reserved.");?></p>
 
 
 
