@@ -47,11 +47,6 @@
                 <?php print $value['value']; ?>
               </dd>
             <?php endforeach; ?>
-              <dd class="solr-value">
-                <?php $link_text = isset($link_text) ? str_replace("<span class='toggle-wrapper'><span>", "", $link_text) : $link_text;?>
-                <?php $des_label = isset($link_text) ? substr($link_text, 0, 20) . ' ...' : $result['object_label'] . ' ...'; ?>
-                <?php print t('<a class="solr-link-obj" href="@url">See "@title" Document</a>', array('@url' => url("islandora/object/" . $result['PID']), '@title' => $des_label)); ?>
-              </dd>
           </dl>
         </div>
       </div>
