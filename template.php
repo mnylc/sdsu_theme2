@@ -179,3 +179,22 @@ function sdsu_theme_block_render($module, $delta, $as_renderable = FALSE) {
   $block_rendered = drupal_render($build);
   return $block_rendered;
 }
+
+/**
+ * Returns HTML for an islandora_solr_facet_wrapper.
+ * 
+ * @param array $variables
+ *   An associative array containing:
+ *   - title: A string to use as the header/title.
+ *   - content: A string containing the content being wrapped.
+ *
+ * @ingroup themeable
+ */
+function sdsu_theme_islandora_solr_facet_wrapper($variables) {
+  $output = '<div class="islandora-solr-facet-wrapper">';
+  $output .= '<h3><a href="javascript:ReverseContentDisplay(\'expand'.$variables['title'].'\')">' . $variables['title'] . '</a></h3>';
+  $output .= '<div style="display:none;" id="expand'.$variables['title'].'">' . $variables['content'] . '</div>';
+  $output .= '</div>';
+  return $output;
+}
+
